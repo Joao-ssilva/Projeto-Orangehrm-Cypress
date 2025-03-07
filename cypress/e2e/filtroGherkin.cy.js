@@ -4,7 +4,7 @@ import { faker } from '@faker-js/faker'
 
 describe('Filtros de "Employee"', () => {
 
-    context.only('Pesquisar um employe,e pelo nome', () => {
+    context('Pesquisar um employe,e pelo nome', () => {
         const dataEmployeeLocal = {
             firstNameLocal: faker.person.firstName(),
             middleNameLocal: faker.person.middleName(),
@@ -155,7 +155,6 @@ describe('Filtros de "Employee"', () => {
             cy.contains('No Records Found') 
             .should('be.visible')
         })
-
         after(() => {
             cy.clearLocalStorage()
             cy.clearCookies()

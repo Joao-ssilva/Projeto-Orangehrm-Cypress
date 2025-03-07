@@ -1,18 +1,16 @@
 # Projeto Site Orangehrm Cypress com Gherkin
 
-## 💻 Tecnologias
+Este projeto utiliza **Cypress** para a automação de testes na plataforma **OrangeHRM**, garantindo a validação de suas funcionalidades através de testes **end-to-end e funcionais**.
 
-Cypress
-Gherkin
-Javascript
-Mochawesome
 
-Este projeto utiliza Cypress para realizar testes automatizados em uma aplicação web.
-
-## Tecnologias Utilizadas
+## 💻 Tecnologias Utilizadas
 - **Cypress**: Framework de testes end-to-end.
+- **Gherkin**: Linguagem para escrita de cenários de teste.
+- **Javascript**: Linguagem de programação utilizada nos testes.
+- **Mochawesome**: Gerador de relatórios para Cypress.
 - **Node.js**: Ambiente de execução para JavaScript.
 - **Yarn**: Gerenciador de pacotes.
+
 
 ## Pré-requisitos
 Antes de rodar os testes, certifique-se de ter as seguintes ferramentas instaladas:
@@ -37,7 +35,7 @@ Para rodar os testes com o Cypress: Caso utilize o Yarn, rode:
  `yarn cypress open `
 
 Caso utilize o npm, rode:
- `npx cypress open `
+ `npm cypress open `
 
 ## Isso abrirá a interface do Cypress, onde você pode visualizar e rodar os testes disponíveis.
 Para rodar todos os testes em modo headless, rode: `yarn cypress run` ou `npx cypress run`

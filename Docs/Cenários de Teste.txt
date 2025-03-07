@@ -98,20 +98,19 @@ Então o sistema deve exibir o employee correspondente ao ID "12345"
 Funcionalidade: Exclusão de Employee no módulo PIM do OrangeHRM
 
 Cenário: Clicar no ícone de lixeira e cancelar a exclusão
-Dado que o usuário está logado no OrangeHRM
-E acessa o módulo "PIM"
-E está na página "Employee List"
-E há um employee "Name" cadastrado
-Quando o usuário clica no ícone de lixeira ao lado do nome do employee "Name"
-E seleciona a opção "No, Cancel" na janela de confirmação
-Então o sistema não deve excluir o employee "Name"
+Dado que o usuário está logado no OrangeHRM e acessa o módulo "PIM"E acessa o módulo "PIM"
+E cria um Employee "José Carlos" E há um employee "Name" cadastrado
+E volta para a página "Employee List"
+Então pesquisa o employee "José Carlos" cadastrado
+Quando o usuário clica no ícone de lixeira ao lado do nome do employee "José Carlos"
+E seleciona a opção "Cancelar" na janela de confirmação
+Então o sistema não deve excluir o employee "José Calos"
 
 Cenário: Clicar no ícone de lixeira e confirmar a exclusão
-Dado que o usuário está logado no OrangeHRM
-E acessa o módulo "PIM"
-E cria um Employee "Name"
+Dado que o usuário está logado no OrangeHRM e acessa o módulo "PIM"E acessa o módulo "PIM"
+E cria um Employee "José Carlos" E há um employee "Name" cadastrado
 E volta para a página "Employee List"
-Então pesquisa o employee "Name" cadastrado
-Quando o usuário clica no ícone de lixeira ao lado do nome do employee "João Silva"
+Então pesquisa o employee "José Carlos" cadastrado
+Quando o usuário clica no ícone de lixeira ao lado do nome do employee "José Carlos"
 E seleciona a opção "Confirmar" na janela de confirmação
-Então o sistema deve excluir o employee "João Silva"
+Então o sistema deve excluir o employee "José Carlos"

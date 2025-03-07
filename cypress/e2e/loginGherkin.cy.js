@@ -3,7 +3,7 @@ import { employee } from '../e2e/elements/datas'
 
 describe('Tela de Login', () => {
 
-    context.only('Login com sucesso', () => {
+    context('Login com sucesso', () => {
 
         it('Dado que o usuário acessa a tela de login do OrangeHRM', () => {
             cy.visit('/')
@@ -51,7 +51,7 @@ describe('Tela de Login', () => {
         after(() => {
             cy.clearLocalStorage()
             cy.clearCookies()
-          })
+        })
     })
 
     context('Login com credenciais inválidas', () => {

@@ -3,7 +3,7 @@ import { employee } from '../e2e/elements/datas'
 
 describe('Cadastro de "Employee"', () => {
 
-    context.only('Validar a existência do botão "+ Add"', () => {
+    context('Validar a existência do botão "+ Add"', () => {
    
         it('Dado que o usuário está logado no OrangeHRM', () => {
             cy.fazerLogin(employee.userName,employee.senha)
@@ -49,8 +49,8 @@ describe('Cadastro de "Employee"', () => {
             cy.get('.oxd-input-group:has(.oxd-label:contains("Employee Id"))')
             .find('input')
             .should('be.visible')
-                .clear()
-                .type(employee.id)
+            .clear()
+            .type(employee.id)
         })
         
         it('E não marca a opção "Create Login Details"', () => {
@@ -71,7 +71,6 @@ describe('Cadastro de "Employee"', () => {
             .should('be.visible')
             .and('contain', 'Personal Details')
         })
-
         after(() => {
             cy.clearLocalStorage()
             cy.clearCookies()
@@ -107,7 +106,6 @@ describe('Cadastro de "Employee"', () => {
         it('E o formulário de cadastro deve aparecer na tela', () => {
             cy.get('form.oxd-form').should('be.visible')
         })
-
         after(() => {
             cy.clearLocalStorage()
             cy.clearCookies()

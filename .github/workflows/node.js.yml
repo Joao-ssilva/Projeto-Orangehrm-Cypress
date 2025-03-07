@@ -11,31 +11,31 @@ jobs:
     runs-on: ubuntu-latest  
 
     steps:  
-      - name: 📥 Checkout do código  
+      - name: Checkout do código  
         uses: actions/checkout@v4  
 
-      - name: 🔧 Configurar Node.js  
+      - name: Configurar Node.js  
         uses: actions/setup-node@v4  
         with:  
           node-version: 22
 
-      - name: 📦 Instalar dependências  
+      - name: Instalar dependências  
         run: yarn install  
 
-      - name: 🚀 Rodar testes do Cypress  
+      - name: Rodar testes do Cypress  
         uses: cypress-io/github-action@v6  
         with:  
           browser: chrome  
           headless: true  
 
-      - name: 📂 Salvar vídeos e screenshots em caso de falha  
+      - name: Salvar vídeos e screenshots em caso de falha  
         if: failure()  
         uses: actions/upload-artifact@v4  
         with:  
           name: cypress-artifacts  
           path: cypress/videos/
 
-      - name: 📤 Publicar relatório no GitHub Pages  
+      - name: Publicar relatório no GitHub Pages  
         if: always()
         uses: peaceiris/actions-gh-pages@v3  
         with:  

@@ -3,7 +3,7 @@ import { employee } from '../e2e/elements/datas'
 
 describe('Módulo "PIM"', () => {
 
-    context.only('Pesquisar o módulo "PIM"', () => {
+    context('Pesquisar o módulo "PIM"', () => {
 
         it('Dado que o usuário está logado no OrangeHRM', () => {
             cy.fazerLogin(employee.userName, employee.senha)
@@ -14,6 +14,8 @@ describe('Módulo "PIM"', () => {
             .type('PIM')
         })
 
+
+        
         it('Então o sistema deve exibir o módulo "PIM" como resultado da pesquisa', () => {
             cy.get('a.oxd-main-menu-item')
                 .should('be.visible')
@@ -27,7 +29,7 @@ describe('Módulo "PIM"', () => {
         after(() => {
             cy.clearLocalStorage()
             cy.clearCookies()
-        })    
+        })  
     })
     
     context('Pesquisar um módulo diferente de "PIM"', () => {
@@ -112,8 +114,7 @@ describe('Módulo "PIM"', () => {
         it('E o fundo do item "PIM" deve estar na cor laranja ou uma cor de fundo, identifcado que esta ativo', () => {
             cy.get('.oxd-main-menu-item.active')
             .contains('PIM')
-            .should('be.visible')
-            
+            .should('be.visible') 
         })
         after(() => {
             cy.clearLocalStorage()
