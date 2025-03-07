@@ -45,9 +45,9 @@ Este projeto gera um relatório automatizado com o Mochawesome, que exibe os res
 ## 📄 [Documentação do Mochawesome](https://link-da-documentacao.com)
 
 ## 🔗 Acesse o relatório atualizado: O link para o relatório mais recente pode ser encontrado na seção About do repositório.
-![Texto alternativo](images/Captura%20de%20tela%202025-03-07%20115655.png)
-## A saída do CI vai ficar assim:
-![Texto alternativo](images/image.png)
+![Texto alternativo](images/relatório.png)
+## A saída dos testes no CI vai ficar assim:
+![Texto alternativo](images/CI.png)
 
 ## Resumo do Projeto
 
