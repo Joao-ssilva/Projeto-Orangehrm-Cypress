@@ -1,0 +1,117 @@
+Cenários de Teste - Funcionalidades do OrangeHRM
+
+Funcionalidade: Tela de Login no OrangeHRM
+
+Cenário: Login com sucesso
+Dado que o usuário acessa a tela de login do OrangeHRM
+E insere um nome de usuário válido "Admin"
+E insere uma senha válida "admin123"
+Quando clica no botão "Login"
+Então ele deve ser redirecionado para o painel administrativo
+
+Cenário: Login sem fornecer usuário e senha
+Dado que o usuário acessa a tela de login do OrangeHRM
+E clica no botão de login sem inserir os dados de login
+Então ele deve ver uma mensagem de erro "Required"
+
+Cenário: Login com credenciais inválidas
+Dado que o usuário acessa a tela de login do OrangeHRM
+E insere um nome de usuário inválido "usuario_invalido"
+E insere uma senha inválida "senha_errada"
+Quando clica no botão "Login"
+Então ele deve ver uma mensagem de erro "Invalid credentials"
+
+Funcionalidade: Módulo PIM no OrangeHRM
+
+Cenário: Pesquisar o módulo "PIM"
+Dado que o usuário está logado no OrangeHRM
+Quando ele digita "PIM" na barra de pesquisa do menu
+Então o sistema deve exibir o módulo "PIM" como resultado da pesquisa
+
+Cenário: Pesquisar um módulo diferente de "PIM"
+Dado que o usuário está logado no OrangeHRM
+E está na página inicial do sistema
+Quando ele digita "Admin" na barra de pesquisa do menu
+Então o sistema deve exibir o módulo "Admin" como resultado da pesquisa
+
+Cenário: Apagar a pesquisa no menu
+Dado que o usuário está logado no OrangeHRM
+E que ele digitou "PIM" na barra de pesquisa do menu
+E que o resultado da pesquisa exibe apenas o módulo "PIM"
+Quando ele limpa o campo de pesquisa
+Então o sistema deve exibir novamente todos os módulos disponíveis no menu
+
+Cenário: Acessar o módulo "PIM"
+Dado que o usuário está logado no OrangeHRM
+E está na página inicial do sistema (validamos pelo Dashboard)
+Quando ele clica no menu lateral
+E seleciona a opção "PIM"
+Então ele deve ser redirecionado para a página do módulo "PIM"
+E o fundo do item "PIM" deve estar na cor laranja
+
+Funcionalidade: Cadastro de Employee no módulo PIM do OrangeHRM
+
+Cenário: Validar a existência do botão "+ Add"
+Dado que o usuário está logado no OrangeHRM
+E acessa o módulo "PIM"
+Quando visualiza a página de Employee List
+Então ele deve ver o botão "+ Add" disponível na tela
+
+Cenário: Acessar a tela de cadastro de usuário clicando no botão "+ Add"
+Dado que o usuário está logado no OrangeHRM
+E acessa o módulo "PIM"
+Quando clica no botão "+ Add"
+Então ele deve ser redirecionado para a tela de cadastro de Employee
+E o formulário de cadastro deve aparecer na tela
+
+Cenário: Tentar cadastrar um usuário sem preencher o nome
+Dado que o usuário está na tela de cadastro de Employee
+E deixa o campo "First Name" em branco
+Quando clica no botão "Save"
+Então o sistema deve exibir a mensagem de erro "Required"
+
+Cenário: Validar tentativa de cadastro com "Employee ID" já existente
+Dado que o usuário está na tela de cadastro de Employee
+E insere um nome válido "João Silva"
+E insere um Employee ID já existente "12345"
+Quando clica no botão "Save"
+Então o sistema deve exibir uma mensagem de erro informando que o Employee ID já existe
+
+Funcionalidade: Filtros de Employee no módulo PIM do OrangeHRM
+
+Cenário: Pesquisar um employee pelo nome
+Dado que o usuário está logado no OrangeHRM
+E acessa o módulo "PIM"
+E está na página "Employee List"
+Quando digita o nome "João Silva" no campo de pesquisa "Employee Name"
+E clica no botão "Search"
+Então o sistema deve exibir os resultados contendo o employee "João Silva"
+
+Cenário: Pesquisar um employee pelo ID
+Dado que o usuário está logado no OrangeHRM
+E acessa o módulo "PIM"
+E está na página "Employee List"
+Quando digita o Employee ID "12345" no campo de pesquisa "Employee ID"
+E clica no botão "Search"
+Então o sistema deve exibir o employee correspondente ao ID "12345"
+
+Funcionalidade: Exclusão de Employee no módulo PIM do OrangeHRM
+
+Cenário: Clicar no ícone de lixeira e cancelar a exclusão
+Dado que o usuário está logado no OrangeHRM
+E acessa o módulo "PIM"
+E está na página "Employee List"
+E há um employee "Name" cadastrado
+Quando o usuário clica no ícone de lixeira ao lado do nome do employee "Name"
+E seleciona a opção "No, Cancel" na janela de confirmação
+Então o sistema não deve excluir o employee "Name"
+
+Cenário: Clicar no ícone de lixeira e confirmar a exclusão
+Dado que o usuário está logado no OrangeHRM
+E acessa o módulo "PIM"
+E cria um Employee "Name"
+E volta para a página "Employee List"
+Então pesquisa o employee "Name" cadastrado
+Quando o usuário clica no ícone de lixeira ao lado do nome do employee "João Silva"
+E seleciona a opção "Confirmar" na janela de confirmação
+Então o sistema deve excluir o employee "João Silva"
