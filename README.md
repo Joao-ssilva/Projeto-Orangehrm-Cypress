@@ -45,11 +45,16 @@ Este projeto gera um relatório automatizado com o Mochawesome, que exibe os res
 ## 📄 [Documentação do Mochawesome](https://link-da-documentacao.com)
 
 ## 🔗 Acesse o relatório atualizado: O link para o relatório mais recente pode ser encontrado na seção About do repositório.
+![Texto alternativo](images/Captura%20de%20tela%202025-03-07%20115655.png)
+## A saída do CI vai ficar assim:
+![Texto alternativo](images/image.png)
 
 ## Resumo do Projeto
 
-Este projeto foi desenvolvido com o objetivo de explorar ao máximo as capacidades do Cypress para testes automatizados. Nele, todos os cenários de teste foram descritos utilizando a linguagem Gherkin, o que facilitou a estruturação e a leitura dos testes. Os testes cobrem todas as frentes da aplicação, incluindo funcionalidades de front-end, testes funcionais, garantindo uma cobertura abrangente de todas as interações possíveis.
+**Este projeto foi desenvolvido com o objetivo de explorar ao máximo as capacidades do Cypress para testes automatizados. Nele, todos os cenários de teste foram descritos utilizando a linguagem Gherkin, o que facilitou a estruturação e a leitura dos testes. Os testes cobrem todas as frentes da aplicação, incluindo funcionalidades de front-end e testes funcionais.**
 
-Além disso, a integração com o GitHub Actions foi realizada para automatizar a execução da bateria de testes na pipeline, permitindo que a validação dos testes ocorra de forma contínua. O projeto gera relatórios automáticos utilizando o Mochawesome, que facilita o acompanhamento dos resultados de cada execução.
+**Todos os testes rodam de forma independentes, sem precisar que outro cenário seja executado antes de qualquer outro.**
 
-Este projeto foi uma grande experiência de aprendizado, permitindo uma imersão profunda nas técnicas de teste que o Cypress oferece, especialmente no uso de Gherkin para descrever cenários e na automação de processos no pipeline de CI/CD.
+**Além disso, a integração com o GitHub Actions foi realizada para automatizar a execução da bateria de testes na pipeline, permitindo que a validação dos testes ocorra de forma contínua. O projeto gera relatórios automáticos utilizando o Mochawesome, que facilita o acompanhamento dos resultados de cada execução.**
+
+**Este projeto foi uma grande experiência de aprendizado, permitindo uma imersão profunda nas técnicas de teste que o Cypress oferece, especialmente no uso de Gherkin para descrever cenários e na automação de processos no pipeline de CI/CD.**

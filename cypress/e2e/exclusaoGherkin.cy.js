@@ -56,7 +56,6 @@ describe('Exclusão de Employee no módulo PIM do OrangeHRM', () => {
     
         it(`Então o sistema não deve excluir o employee "${dataEmployeeLocal.firstNameLocal}"`, () => {
             cy.get('.oxd-table-card').should('contain.text', `${dataEmployeeLocal.firstNameLocal}`)
-            cy.screenshot()
         })
         
         after(() => {
@@ -118,7 +117,7 @@ describe('Exclusão de Employee no módulo PIM do OrangeHRM', () => {
             cy.contains(`${dataEmployeeLocal.firstNameLocal} ${dataEmployeeLocal.middleNameLocal}`).should('not.exist')
             cy.contains('Successfully Deleted')
             .should('be.visible')
-            cy.screenshot()
+            
         })
         after(() => {
             cy.clearLocalStorage()
