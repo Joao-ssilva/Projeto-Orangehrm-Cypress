@@ -3,7 +3,7 @@ import { employee } from '../e2e/elements/datas'
 
 describe('Tela de Login', () => {
 
-    context('Login com sucesso', () => {
+    context.only('Login com sucesso', () => {
 
         it('Dado que o usuário acessa a tela de login do OrangeHRM', () => {
             cy.visit('/')

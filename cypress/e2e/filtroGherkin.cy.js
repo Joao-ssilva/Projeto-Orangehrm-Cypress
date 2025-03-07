@@ -4,7 +4,7 @@ import { faker } from '@faker-js/faker'
 
 describe('Filtros de "Employee"', () => {
 
-    context('Pesquisar um employe,e pelo nome', () => {
+    context.only('Pesquisar um employe,e pelo nome', () => {
         const dataEmployeeLocal = {
             firstNameLocal: faker.person.firstName(),
             middleNameLocal: faker.person.middleName(),

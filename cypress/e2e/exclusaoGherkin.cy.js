@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker'
 
 describe('Exclusão de Employee no módulo PIM do OrangeHRM', () => {
 
-    context('Clicar no ícone de lixeira e cancelar a exclusão, garantindo que o employee não foi excluído', () => {
+    context.only('Clicar no ícone de lixeira e cancelar a exclusão, garantindo que o employee não foi excluído', () => {
         const dataEmployeeLocal = {
             firstNameLocal: faker.person.firstName(),
             middleNameLocal: faker.person.middleName(),

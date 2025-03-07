@@ -3,7 +3,7 @@ import { employee } from '../e2e/elements/datas'
 
 describe('Módulo "PIM"', () => {
 
-    context('Pesquisar o módulo "PIM"', () => {
+    context.only('Pesquisar o módulo "PIM"', () => {
 
         it('Dado que o usuário está logado no OrangeHRM', () => {
             cy.fazerLogin(employee.userName, employee.senha)

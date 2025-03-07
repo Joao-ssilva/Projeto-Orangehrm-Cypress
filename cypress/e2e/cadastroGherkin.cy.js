@@ -3,7 +3,7 @@ import { employee } from '../e2e/elements/datas'
 
 describe('Cadastro de "Employee"', () => {
 
-    context('Validar a existência do botão "+ Add"', () => {
+    context.only('Validar a existência do botão "+ Add"', () => {
    
         it('Dado que o usuário está logado no OrangeHRM', () => {
             cy.fazerLogin(employee.userName,employee.senha)
