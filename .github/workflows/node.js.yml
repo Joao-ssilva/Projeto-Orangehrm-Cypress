@@ -1,0 +1,54 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout do código
+        uses: actions/checkout@v4
+
+      - name: 🔧 Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: 📦 Instalar dependências
+        run: yarn install
+
+      - name: 🚀 Rodar testes do Cypress
+        uses: cypress-io/github-action@v6
+        with:
+          browser: chrome
+          headless: true
+        env:
+          CYPRESS_INSTALL_BINARY: 0  
+
+      - name: 📂 Salvar vídeos e screenshots em caso de falha
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cypress-artifacts
+          path: cypress/videos/
+
+      - name: 📄 Salvar relatório do Mochawesome
+        if: always() 
+        uses: actions/upload-artifact@v4
+        with:
+          name: mochawesome-report
+          path: cypress/reports/html/
+
+      - name: 🌐 Publicar relatório no GitHub Pages (opcional)
+        if: always() 
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress/reports/html
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
